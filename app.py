@@ -112,7 +112,7 @@ style = st.selectbox("📖 Choose citation style (reference list only — APA us
 
 # 🚀 Handle new question
 if user_question and user_question != st.session_state.last_question:
-    with st.spinner("🔍 FemCite is scanning the literature and thinking deeply... hang tight!"):
+    with st.spinner("🔍 FemCite is scanning the literature and thinking deeply... this may take a few minutes - hang tight!"):
         entries = search_femcite_api(user_question, top_k=10)
 
         if not entries:
