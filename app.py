@@ -70,6 +70,18 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
+# 👩‍🎨 Style tweak: increase input font size to match body text
+st.markdown("""
+    <style>
+    div[data-baseweb="input"] input {
+        font-size: 1.1rem;
+    }
+    div[data-baseweb="select"] > div {
+        font-size: 1.1rem;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
 st.title("🌸 FemCite – Femininities Citation Assistant")
 st.markdown("""
 _Helping you integrate femininities scholarship into your research, writing, and teaching — with a scholarly assistant for discovering, understanding, and citing work on femininities._
