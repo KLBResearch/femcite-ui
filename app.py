@@ -213,13 +213,9 @@ if st.session_state.chat_history:
 
 st.markdown("⬆️ Add a new question anytime using the box above.")
 
+
 # 👇 Footer content shown after the results
 st.markdown("""
-💖 **Found this helpful?** Support us by donating to [LGBTQ Psychology Canada](https://lgbtqpsychology.com/make-an-online-donation).
-""")
-
-st.divider()
----
 ### 📚 Journal of Femininities
 Are you conducting research or scholarship related to femininities? Consider the [*Journal of Femininities*](https://brill.com/view/journals/fem/fem-overview.xml?language=en) as an outlet for your next manuscript.
 """)
@@ -227,10 +223,13 @@ Are you conducting research or scholarship related to femininities? Consider the
 st.image(
     "https://brill.com/coverimage?doc=%2Fjournals%2Ffem%2Ffem-overview.xml&width=200&type=webp",
     caption="Journal of Femininities",
-    use_container_width=150
+    use_container_width=False,  # or True if you prefer
+    width=150  # thumbnail size!
 )
 
 st.markdown("""
+💖 **Found this helpful?** Support us by donating to [LGBTQ Psychology Canada](https://lgbtqpsychology.com/make-an-online-donation).
+
 ---
 
 📬 **Want to share feedback or report a bug?** Email us at [lgbtqpsychology@gmail.com](mailto:lgbtqpsychology@gmail.com)
