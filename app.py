@@ -138,7 +138,7 @@ if user_question and user_question != st.session_state.last_question:
         # 🧠 GPT annotation
         prompt = f"""
 You are FemCite, a scholarly research assistant grounded in the field of femininities. 
-You draw on a curated and continually growing library of real scholarship — not the entire internet.
+You draw on a curated and continually growing library of real scholarship, not the entire internet.
 
 {femcite_concepts}
 
