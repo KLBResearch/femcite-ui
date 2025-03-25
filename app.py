@@ -64,47 +64,29 @@ References:
     return response.choices[0].message.content
 
 # 🎨 UI Setup
-# 🎨 UI Setup
 st.set_page_config(page_title="FemCite", layout="centered")
-
 st.title("🌸 FemCite – Femininities Citation Assistant")
 
-st.markdown("_Helping you integrate femininities scholarship into your research, writing, and teaching — with a scholarly assistant for discovering, understanding, and citing work on femininities._")
-
-st.markdown("📌 **FemCite is live!** Share this tool: [https://femcite-ui.streamlit.app](https://femcite-ui.streamlit.app)")
+st.markdown("""
+_Helping you integrate femininities scholarship into your research, writing, and teaching — with a scholarly assistant for discovering, understanding, and citing work on femininities._
+""")
+st.divider()
 
 st.markdown("""
+📌 **FemCite is live!** You can share this tool using: [https://femcite-ui.streamlit.app](https://femcite-ui.streamlit.app)
+
+---
+
 ### 📝 How to Use FemCite
-1. **Type your topic** (e.g., *femininity and leadership*) in the box above. You can also ask more complex questions if you like!
+
+1. **Type your topic** (e.g., _femininity and leadership_) in the box above. You can also ask more complex questions!
 2. **Choose APA** from the dropdown (more styles coming soon).
 3. **Submit your query.**
 
-💡 *You can ask more than one question — just type a new one when ready.*
+💡 _You can ask multiple questions — type a new one when ready._
 
-**Note:** This tool is still in development (beta version). Some features may change or break. We recommend copying or downloading your output right away — leaving the window idle for too long can cause responses to disappear.
+⚠️ **Important:** Be sure to copy or download your output immediately. If the app refreshes before you ask a new question, your answer may disappear.
 """)
-
-# Then: your input box and query logic go here (no changes needed)
-
-# After your citation response is displayed:
-st.divider()
-
-# 💖 Donation info
-st.markdown("💖 **Found this helpful?** You can support our work by donating to [LGBTQ Psychology Canada](https://lgbtqpsychology.com/make-an-online-donation).")
-
-# 📚 Journal of Femininities promo
-st.markdown("""
-### 📚 Recommended: [*Journal of Femininities*](https://brill.com/view/journals/fem/fem-overview.xml?language=en)
-Are you conducting research or scholarship related to femininities? Consider the *Journal of Femininities* as an outlet for your next manuscript.
-""")
-
-st.image(
-    "https://brill.com/coverimage?doc=%2Fjournals%2Ffem%2Ffem-overview.xml&width=200&type=webp",
-    caption="Journal of Femininities",
-    use_container_width=True
-)
-
-
 
 # 🧠 Memory
 if "chat_history" not in st.session_state:
@@ -209,3 +191,24 @@ if st.session_state.chat_history:
         st.download_button("📚 Export Citations (.bib)", f.read(), file_name="femcite.bib")
 
 st.markdown("⬆️ Add a new question anytime using the box above.")
+
+# 📚 Journal of Femininities
+st.divider()
+st.markdown("### 📖 Journal of Femininities")
+st.markdown("""
+Are you conducting research or scholarship related to femininities?  
+Consider the [**Journal of Femininities**](https://brill.com/view/journals/fem/fem-overview.xml?language=en) as an outlet for your next manuscript.
+""")
+
+col1, col2 = st.columns([1, 3])
+with col1:
+    st.image(
+        "https://brill.com/coverimage?doc=%2Fjournals%2Ffem%2Ffem-overview.xml&width=200&type=webp",
+        caption="Journal of Femininities",
+        use_container_width=True
+    )
+with col2:
+    st.markdown("""
+The *Journal of Femininities* is a peer-reviewed, interdisciplinary journal for innovative scholarship on femininities.  
+Explore current and past issues on [Brill’s website](https://brill.com/view/journals/fem/fem-overview.xml?language=en).
+""")
