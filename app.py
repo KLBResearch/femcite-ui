@@ -103,8 +103,6 @@ st.markdown("""
 💡 *Ask more than one question — just type a new one when you're ready.*
 
 ⚠️ **Important:** Copy or download your output right away. If the app refreshes before you ask your next question, your original answer may disappear.
-
----
 """)
 
 st.divider()
