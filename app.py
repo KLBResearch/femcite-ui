@@ -91,6 +91,22 @@ st.markdown("""
 💖 **Found this helpful?** You can support our work by donating to [LGBTQ Psychology Canada](https://lgbtqpsychology.com/make-an-online-donation).
 """)
 
+# 📚 Journal of Femininities Promo
+st.divider()
+st.markdown("### 📖 Recommended: Journal of Femininities")
+st.markdown(
+    "Are you conducting research or scholarship related to femininities? "
+    "Consider the [Journal of Femininities](https://brill.com/view/journals/fem/fem-overview.xml?language=en) "
+    "as an outlet for your next manuscript."
+)
+
+# Journal cover image from Brill
+st.image(
+    "https://brill.com/coverimage?doc=%2Fjournals%2Ffem%2Ffem-overview.xml&width=200&type=webp",
+    caption="Journal of Femininities",
+    use_column_width=False
+)
+
 
 # 🧠 Memory
 if "chat_history" not in st.session_state:
