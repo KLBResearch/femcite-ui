@@ -211,7 +211,7 @@ Are you conducting research or scholarship related to femininities? Consider the
 st.image(
     "https://brill.com/coverimage?doc=%2Fjournals%2Ffem%2Ffem-overview.xml&width=200&type=webp",
     caption="Journal of Femininities",
-    use_container_width=True
+    use_container_width=150
 )
 
 st.markdown("""
