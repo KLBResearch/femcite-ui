@@ -119,8 +119,11 @@ if "last_question" not in st.session_state:
     st.session_state.last_question = ""
 
 # 💬 User prompt
-user_question = st.text_input("###💬 What are you researching or thinking about?")
-style = st.selectbox("##📖 Choose citation style (reference list only — APA used for in-text)", ["APA", "MLA", "Chicago"])
+st.markdown("### 💬 What are you researching or thinking about?")
+user_question = st.text_input(label="", placeholder="Type your topic here...")
+
+st.markdown("### 📖 Choose citation style")
+style = st.selectbox(label="", options=["APA", "MLA", "Chicago"])
 
 # 🚀 Handle new question
 if user_question and user_question != st.session_state.last_question:
