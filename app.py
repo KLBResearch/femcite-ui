@@ -105,10 +105,7 @@ st.markdown("""
 ⚠️ **Important:** Copy or download your output right away. If the app refreshes before you ask your next question, your original answer may disappear.
 
 ---
-💖 **Found this helpful?** Support us by donating to [LGBTQ Psychology Canada](https://lgbtqpsychology.com/make-an-online-donation).
-""")
 
-st.divider()
 
 # 🧠 Memory
 if "chat_history" not in st.session_state:
@@ -218,6 +215,10 @@ st.markdown("⬆️ Add a new question anytime using the box above.")
 
 # 👇 Footer content shown after the results
 st.markdown("""
+💖 **Found this helpful?** Support us by donating to [LGBTQ Psychology Canada](https://lgbtqpsychology.com/make-an-online-donation).
+""")
+
+st.divider()
 ---
 ### 📚 Journal of Femininities
 Are you conducting research or scholarship related to femininities? Consider the [*Journal of Femininities*](https://brill.com/view/journals/fem/fem-overview.xml?language=en) as an outlet for your next manuscript.
