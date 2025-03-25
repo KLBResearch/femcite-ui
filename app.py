@@ -203,6 +203,7 @@ st.markdown("⬆️ Add a new question anytime using the box above.")
 
 # 👇 Footer content shown after the results
 st.markdown("""
+---
 ### 📚 Journal of Femininities
 Are you conducting research or scholarship related to femininities? Consider the [*Journal of Femininities*](https://brill.com/view/journals/fem/fem-overview.xml?language=en) as an outlet for your next manuscript.
 """)
