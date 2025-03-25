@@ -73,9 +73,31 @@ st.set_page_config(
 # 👩‍🎨 Style tweak: increase input font size to match body text
 st.markdown("""
     <style>
-    /* TEST: Turn text input background pink to confirm this is working */
+    /* Make input fonts match the rest of the app */
     div[data-baseweb="input"] input {
-        background-color: #ffe6f0 !important;
+        font-size: 1.1rem;
+    }
+    div[data-baseweb="select"] > div {
+        font-size: 1.1rem;
+    }
+
+    /* Tighter spacing between headers and input boxes */
+    .stTextInput, .stSelectbox {
+        margin-top: -0.75rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Bold and slightly larger labels */
+    label {
+        font-size: 1.2rem !important;
+        font-weight: 600 !important;
+        margin-bottom: 0.25rem;
+    }
+
+    /* Optional: Round input edges a bit more */
+    .stTextInput > div > div > input,
+    .stSelectbox > div {
+        border-radius: 0.6rem;
     }
     </style>
 """, unsafe_allow_html=True)
