@@ -96,13 +96,13 @@ st.markdown("""
 
 ### 📝 How to Use FemCite
 
-1. **Type your topic** (e.g., *femininity and leadership*) in the box above.
-2. **Choose APA** from the dropdown (more styles coming soon).
+1. **Type your topic or question** (e.g., *femininity and leadership*) in the box above.
+2. **Choose the citation style** you would like for the reference list.
 3. **Submit your query.**
 
 💡 *Ask more than one question — just type a new one when you're ready.*
 
-⚠️ **Important:** Copy or download your output right away. If the app refreshes, your answer may disappear.
+⚠️ **Important:** Copy or download your output right away. If the app refreshes before you ask your next question, your original answer may disappear.
 
 ---
 💖 **Found this helpful?** Support us by donating to [LGBTQ Psychology Canada](https://lgbtqpsychology.com/make-an-online-donation).
