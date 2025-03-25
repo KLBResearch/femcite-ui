@@ -122,7 +122,7 @@ if "last_question" not in st.session_state:
 st.markdown("### 💬 What are you researching or thinking about?")
 user_question = st.text_input(label="", placeholder="Type your topic here...")
 
-st.markdown("### 📖 Choose citation style")
+st.markdown("#### 📖 Choose citation style")
 style = st.selectbox(label="", options=["APA", "MLA", "Chicago"])
 
 # 🚀 Handle new question
