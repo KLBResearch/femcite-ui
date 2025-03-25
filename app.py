@@ -64,8 +64,6 @@ References:
     return response.choices[0].message.content
 
 # 🎨 UI Setup
-import streamlit as st
-
 st.set_page_config(
     page_title="FemCite",
     layout="centered",
@@ -100,9 +98,6 @@ st.markdown("""
 
 st.divider()
 
-
-
-
 # 🧠 Memory
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
@@ -121,16 +116,14 @@ if user_question and user_question != st.session_state.last_question:
         entries = search_femcite_api(user_question, top_k=10)
 
         if not entries:
-             st.info("🤔 I couldn’t locate anything in the library that connects to that topic. Try rephrasing your question or narrowing the focus.")
+            st.info("🤔 I couldn’t locate anything in the library that connects to that topic. Try rephrasing your question or narrowing the focus.")
             st.stop()
 
-         source_block = "\n\n".join(
-             f"Title: {e['title']}\nAuthors: {e['authors']}\nYear: {e['year']}\nAbstract: {e['abstract']}" for e in entries
+        source_block = "\n\n".join(
+            f"Title: {e['title']}\nAuthors: {e['authors']}\nYear: {e['year']}\nAbstract: {e['abstract']}" for e in entries
         )
 
- 
-
-# 🧠 GPT annotation
+        # 🧠 GPT annotation
         prompt = f"""
 You are FemCite, a scholarly research assistant grounded in the field of femininities. 
 You draw on a curated and continually growing library of real scholarship — not the entire internet.
@@ -176,7 +169,7 @@ Sources:
         st.session_state.chat_history.append((f"{style} citations", st.session_state.citations))
         st.session_state.last_question = user_question
 
-        # 💾 Save files
+        # 📂 Save files
         chat_txt = "\n\n".join(f"{speaker}:\n{msg}" for speaker, msg in st.session_state.chat_history)
         with open("femcite_chat.txt", "w", encoding="utf-8") as f:
             f.write(chat_txt)
@@ -195,13 +188,13 @@ Sources:
 
 # 💬 Display history
 if st.session_state.chat_history:
-    st.subheader("🗣️ Conversation History")
+    st.subheader("🧣️ Conversation History")
     for speaker, msg in st.session_state.chat_history:
         st.markdown(f"**{speaker}:**\n{msg}\n")
         st.markdown("---")
 
     with open("femcite_chat.txt", "r") as f:
-        st.download_button("💾 Download Chat (.txt)", f.read(), file_name="femcite_chat.txt")
+        st.download_button("📂 Download Chat (.txt)", f.read(), file_name="femcite_chat.txt")
 
     with open("femcite.bib", "r") as f:
         st.download_button("📚 Export Citations (.bib)", f.read(), file_name="femcite.bib")
@@ -225,7 +218,6 @@ st.markdown("""
 
 📬 **Want to share feedback or report a bug?** Email us at [lgbtqpsychology@gmail.com](mailto:lgbtqpsychology@gmail.com)
 """)
-
 
 st.markdown(
     "Made with ❤️ by [LGBTQ Psychology Canada](https://lgbtqpsychology.com) • [Support our work](https://lgbtqpsychology.com/make-an-online-donation)",
