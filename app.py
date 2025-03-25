@@ -64,29 +64,44 @@ References:
     return response.choices[0].message.content
 
 # 🎨 UI Setup
-st.set_page_config(page_title="FemCite", layout="centered")
-st.title("🌸 FemCite – Femininities Citation Assistant")
+import streamlit as st
 
+st.set_page_config(
+    page_title="FemCite",
+    layout="centered",
+    initial_sidebar_state="collapsed"
+)
+
+st.title("🌸 FemCite – Femininities Citation Assistant")
 st.markdown("""
 _Helping you integrate femininities scholarship into your research, writing, and teaching — with a scholarly assistant for discovering, understanding, and citing work on femininities._
 """)
+
 st.divider()
 
 st.markdown("""
-📌 **FemCite is live!** You can share this tool using: [https://femcite-ui.streamlit.app](https://femcite-ui.streamlit.app)
+📌 **FemCite is live!** You can share this tool: [https://femcite-ui.streamlit.app](https://femcite-ui.streamlit.app)
 
 ---
 
 ### 📝 How to Use FemCite
 
-1. **Type your topic** (e.g., _femininity and leadership_) in the box above. You can also ask more complex questions!
+1. **Type your topic** (e.g., *femininity and leadership*) in the box above.
 2. **Choose APA** from the dropdown (more styles coming soon).
 3. **Submit your query.**
 
-💡 _You can ask multiple questions — type a new one when ready._
+💡 *Ask more than one question — just type a new one when you're ready.*
 
-⚠️ **Important:** Be sure to copy or download your output immediately. If the app refreshes before you ask a new question, your answer may disappear.
+⚠️ **Important:** Copy or download your output right away. If the app refreshes, your answer may disappear.
+
+---
+💖 **Found this helpful?** Support us by donating to [LGBTQ Psychology Canada](https://lgbtqpsychology.com/make-an-online-donation).
 """)
+
+st.divider()
+
+
+
 
 # 🧠 Memory
 if "chat_history" not in st.session_state:
@@ -102,12 +117,14 @@ style = st.selectbox("📖 Choose citation style (reference list only — APA us
 
 # 🚀 Handle new question
 if user_question and user_question != st.session_state.last_question:
-    with st.spinner("Fetching sources and generating response..."):
+   with st.spinner("🔍 FemCite is reviewing the vast body of Femininities scholarship and thinking deeply..."):
+
+    st.info("💡 *This might take up to 1–2 minutes.* FemCite is sorting through a rich archive and reflecting on your query. Hang tight — it's being thoughtful, not slow ✨")
 
         entries = search_femcite_api(user_question, top_k=10)
 
         if not entries:
-            st.info("🤔 I couldn’t locate anything in the library that connects to that topic. Try rephrasing your question or narrowing the focus.")
+            st.info("🤔 I couldn’t locate anything that connects to that topic. Try rephrasing your question by narrowing or broadening the focus.")
             st.stop()
 
         source_block = "\n\n".join(
@@ -192,23 +209,26 @@ if st.session_state.chat_history:
 
 st.markdown("⬆️ Add a new question anytime using the box above.")
 
-# 📚 Journal of Femininities
-st.divider()
-st.markdown("### 📖 Journal of Femininities")
+# 👇 Footer content shown after the results
 st.markdown("""
-Are you conducting research or scholarship related to femininities?  
-Consider the [**Journal of Femininities**](https://brill.com/view/journals/fem/fem-overview.xml?language=en) as an outlet for your next manuscript.
+### 📚 Journal of Femininities
+Are you conducting research or scholarship related to femininities? Consider the [*Journal of Femininities*](https://brill.com/view/journals/fem/fem-overview.xml?language=en) as an outlet for your next manuscript.
 """)
 
-col1, col2 = st.columns([1, 3])
-with col1:
-    st.image(
-        "https://brill.com/coverimage?doc=%2Fjournals%2Ffem%2Ffem-overview.xml&width=200&type=webp",
-        caption="Journal of Femininities",
-        use_container_width=True
-    )
-with col2:
-    st.markdown("""
-The *Journal of Femininities* is a peer-reviewed, interdisciplinary journal for innovative scholarship on femininities.  
-Explore current and past issues on [Brill’s website](https://brill.com/view/journals/fem/fem-overview.xml?language=en).
+st.image(
+    "https://brill.com/coverimage?doc=%2Fjournals%2Ffem%2Ffem-overview.xml&width=200&type=webp",
+    caption="Journal of Femininities",
+    use_container_width=True
+)
+
+st.markdown("""
+---
+
+📬 **Want to share feedback or report a bug?** Email us at [lgbtqpsychology@gmail.com](mailto:lgbtqpsychology@gmail.com)
 """)
+
+
+st.markdown(
+    "Made with ❤️ by [LGBTQ Psychology Canada](https://lgbtqpsychology.com) • [Support our work](https://lgbtqpsychology.com/make-an-online-donation)",
+    unsafe_allow_html=True
+)
