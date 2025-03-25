@@ -117,21 +117,20 @@ style = st.selectbox("📖 Choose citation style (reference list only — APA us
 
 # 🚀 Handle new question
 if user_question and user_question != st.session_state.last_question:
-   with st.spinner("🔍 FemCite is reviewing the vast body of Femininities scholarship and thinking deeply..."):
-
-    st.info("💡 *This might take up to 1–2 minutes.* FemCite is sorting through a rich archive and reflecting on your query. Hang tight — it's being thoughtful, not slow ✨")
-
+    with st.spinner("🔍 FemCite is scanning the literature and thinking deeply... hang tight!"):
         entries = search_femcite_api(user_question, top_k=10)
 
         if not entries:
-            st.info("🤔 I couldn’t locate anything that connects to that topic. Try rephrasing your question by narrowing or broadening the focus.")
+             st.info("🤔 I couldn’t locate anything in the library that connects to that topic. Try rephrasing your question or narrowing the focus.")
             st.stop()
 
-        source_block = "\n\n".join(
-            f"Title: {e['title']}\nAuthors: {e['authors']}\nYear: {e['year']}\nAbstract: {e['abstract']}" for e in entries
+         source_block = "\n\n".join(
+             f"Title: {e['title']}\nAuthors: {e['authors']}\nYear: {e['year']}\nAbstract: {e['abstract']}" for e in entries
         )
 
-        # 🧠 GPT annotation
+ 
+
+# 🧠 GPT annotation
         prompt = f"""
 You are FemCite, a scholarly research assistant grounded in the field of femininities. 
 You draw on a curated and continually growing library of real scholarship — not the entire internet.
