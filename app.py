@@ -64,10 +64,12 @@ References:
     return response.choices[0].message.content
 
 # 🎨 UI Setup
+# 🎨 UI Setup
 st.set_page_config(page_title="FemCite", layout="centered")
 st.title("🌸 FemCite – Femininities Citation Assistant")
 st.markdown("_Helping you integrate femininities scholarship into your research, writing, and teaching — with a scholarly assistant for discovering, understanding, and citing work on femininities._")
 st.divider()
+
 st.markdown("""
 📌 **FemCite is live!** You can share this tool using: [https://femcite-ui.streamlit.app](https://femcite-ui.streamlit.app)
 
@@ -82,14 +84,23 @@ st.markdown("""
 💡 *You can ask more than one question — just type a new one when ready.*
 
 ⚠️ **Important:** Be sure to copy or download your output right away. If the app refreshes, your answer may disappear.
-""")
+
+---
+
 ⚠️ **Note:** This tool is still in development (beta version). Some features may change or break. We recommend copying or downloading your output right away — leaving the window idle for too long can cause responses to disappear.
 
-                                                                                                                                                                                     
 ---
 
 💖 **Found this helpful?** You can support our work by donating to [LGBTQ Psychology Canada](https://lgbtqpsychology.com/make-an-online-donation).
+
+---
+
+📰 **Are you conducting research related to femininities?**  
+Consider submitting your work to the [*Journal of Femininities*](https://brill.com/view/journals/fem/fem-overview.xml?language=en) — a peer-reviewed journal for innovative, interdisciplinary work on femininities.
+
+[![Journal of Femininities cover](https://brill.com/coverimage?doc=%2Fjournals%2Ffem%2Ffem-overview.xml&width=200&type=webp)](https://brill.com/view/journals/fem/fem-overview.xml?language=en)
 """)
+
 
 # 📚 Journal of Femininities Promo
 st.divider()
