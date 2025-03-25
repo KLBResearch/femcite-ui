@@ -73,31 +73,12 @@ st.set_page_config(
 # 👩‍🎨 Style tweak: increase input font size to match body text
 st.markdown("""
     <style>
-    /* Increase font size in text and select inputs */
-    div[data-baseweb="input"] input,
-    div[data-baseweb="select"] {
-        font-size: 1.1rem;
-    }
-
-    /* Adjust spacing around input fields */
-    .stTextInput, .stSelectbox {
-        margin-bottom: 0.75rem !important;
-    }
-
-    /* Tighten spacing below the label */
-    label {
-        display: block;
-        margin-bottom: 0.25rem !important;
-    }
-
-    /* Remove extra vertical padding inside form containers */
-    section[tabindex="0"] {
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
+    /* TEST: Turn text input background pink to confirm this is working */
+    div[data-baseweb="input"] input {
+        background-color: #ffe6f0 !important;
     }
     </style>
 """, unsafe_allow_html=True)
-
 
 
 st.title("🌸 FemCite – Femininities Citation Assistant")
