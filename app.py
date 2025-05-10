@@ -245,19 +245,12 @@ Are you conducting research or scholarship related to femininities? Consider the
 st.image(
     "https://brill.com/coverimage?doc=%2Fjournals%2Ffem%2Ffem-overview.xml&width=200&type=webp",
     caption="Journal of Femininities",
-    use_container_width=False,  # or True if you prefer
-    width=150  # thumbnail size!
+    use_container_width=False,
+    width=150
 )
 
 st.markdown("""
-💖 **Found this helpful?** Support us by donating to [LGBTQ Psychology Canada](https://lgbtqpsychology.com/make-an-online-donation).
-
 ---
 
-📬 **Want to share feedback or report a bug?** Email us at [lgbtqpsychology@gmail.com](mailto:lgbtqpsychology@gmail.com)
+📬 **Want to share feedback or report a bug?** Email us at [femcite@klbresearch.org](mailto:femcite@klbresearch.org)
 """)
-
-st.markdown(
-    "Made with ❤️ by [LGBTQ Psychology Canada](https://lgbtqpsychology.com) • [Support our work](https://lgbtqpsychology.com/make-an-online-donation)",
-    unsafe_allow_html=True
-)
