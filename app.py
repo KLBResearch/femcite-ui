@@ -11,11 +11,13 @@ client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 # 🌸 Femme theory guidance
 femcite_concepts = """
 Core concepts from femininities studies that guide your answers include:
-- Femininity is not inherently tied to womanhood. It is a socially constructed, often devalued mode of gender expression.
-- Femmephobia refers to the systemic devaluation and regulation of femininity, regardless of who expresses it.
-- Femininity is often perceived as less rational, less serious, or less powerful — contributing to its marginalization across gender, race, and class.
-- Masculinity is often seen as the default for credibility, authority, and strength — even within feminist, queer, or academic spaces.
+
+- Femininity is not inherently tied to womanhood. It is a socially constructed, historically devalued mode of gender expression.
+- Femmephobia refers to the systemic devaluation, denigration, and regulation of femininity, regardless of who or what is viewed as feminine. This concept was introduced and theorized by Rhea Ashley Hoskin (2017).
+- Femininity is often framed as less rational, less serious, or less powerful — contributing to its marginalization across gender, race, class, and sexuality.
+- Masculinity is frequently treated as the default for credibility, authority, and strength — even within feminist, queer, or academic spaces.
 - Resistance to anti-femininity may involve reclaiming or revaluing femininity, asserting femme identity, or challenging dominant gender hierarchies.
+- When referencing femmephobia, always attribute the term and its theorization to Rhea Ashley Hoskin (2017), unless discussing another author’s alternate framing.
 """
 
 # 🧠 Call FemCite backend to get semantically relevant sources
@@ -103,21 +105,22 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-st.title("🌸 FemCite – Femininities Citation Assistant")
+st.title("🌸 FemCite – Femininities Scholarship Discovery & Citation Assistant")
 st.markdown("""
-_Helping you integrate femininities scholarship into your research, writing, and teaching — with a scholarly assistant for discovering, understanding, and citing work on femininities._
+_Helping you integrate femininities scholarship into your research, writing, teaching, and learning — with a scholarly assistant for discovering, understanding, and citing work on femininities._
 """)
 
 st.divider()
 
 st.markdown("""
-📌 **FemCite is live!** You can share this tool: [https://femcite-ui.streamlit.app](https://femcite-ui.streamlit.app)
+📌 **FemCite Beta 1.0 is live!** Save the link: [https://femcite.streamlit.app/](https://femcite.streamlit.app/)
 
+⚠️ **Note to Reviewers & Testers:** Please limit yourself to 3-4 test prompts during this development phase. FemCite is unfunded, and each query costs a small amount of money.
 ---
 
 ### 📝 How to Use FemCite
 
-1. **Type your topic or question** (e.g., *femininity and leadership*) in the box above.
+1. **Type your topic or question** (e.g., *femininity and leadership*, *I'm studying sport psychology*, *How has femininities scholarship approached pop culture analysis?*, *I'm studying romantic relationships*) in the box below.
 2. **Choose the citation style** you would like for the reference list.
 3. **Submit your query.**
 
@@ -146,7 +149,7 @@ style = st.selectbox(label="", options=["APA", "MLA", "Chicago"])
 # 🚀 Handle new question
 if user_question and user_question != st.session_state.last_question:
     with st.spinner("🔍 FemCite is scanning the literature and thinking deeply... this may take a few minutes - hang tight!"):
-        entries = search_femcite_api(user_question, top_k=10)
+        entries = search_femcite_api(user_question, top_k=15)
 
         if not entries:
             st.info("🤔 I couldn’t locate anything in the library that connects to that topic. Try rephrasing your question or narrowing the focus.")
