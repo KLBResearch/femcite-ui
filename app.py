@@ -115,7 +115,7 @@ st.divider()
 st.markdown("""
 📌 **FemCite Beta 1.0 is live!** Save the link: [https://femcite.streamlit.app/](https://femcite.streamlit.app/)
 
-⚠️ **Note to Reviewers & Testers:** Please limit yourself to 3-4 test prompts during this development phase. FemCite is unfunded, and each query costs a small amount of money.
+⚠️ Note to Reviewers & Testers: please limit yourself to 3-4 test prompts during this development phase. FemCite is unfunded, and each query costs a small amount of money.
 ---
 
 ### 📝 How to Use FemCite
